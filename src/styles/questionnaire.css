@@ -1,0 +1,550 @@
+/* ==========================================================================
+   Islamic Learning & Values Questionnaire - Stylesheet
+   Strict Palette:
+   - Primary (60%): Soft White (#F7F9FB)
+   - Secondary (30%): Deep Navy (#123A63) & Slate Gray (#5F748C)
+   - Accent (10%): Antique Gold (#C2A56A)
+   ========================================================================== */
+
+:root {
+  --color-soft-white: #F7F9FB;
+  --color-card-bg: #FFFFFF;
+  --color-deep-navy: #123A63;
+  --color-slate-gray: #5F748C;
+  --color-slate-light: rgba(95, 116, 140, 0.15);
+  --color-slate-border: rgba(95, 116, 140, 0.25);
+  --color-antique-gold: #C2A56A;
+  --color-antique-gold-hover: #B5975B;
+  --color-antique-gold-focus: rgba(194, 165, 106, 0.25);
+  --color-error: #B33A3A;
+  --color-error-bg: rgba(179, 58, 58, 0.05);
+
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --max-width-container: 780px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --transition-standard: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--color-soft-white);
+  color: var(--color-deep-navy);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-soft-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 80px;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   1. Initial Start Section
+   ========================================================================== */
+.intro-section {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-slate-border);
+  border-radius: var(--radius-lg);
+  padding: 56px 48px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(18, 58, 99, 0.04);
+  margin-bottom: 56px;
+  position: relative;
+}
+
+.intro-accent-line {
+  width: 54px;
+  height: 3px;
+  background-color: var(--color-antique-gold);
+  margin: 0 auto 24px;
+  border-radius: 2px;
+}
+
+.intro-title {
+  font-family: var(--font-heading);
+  color: var(--color-deep-navy);
+  font-size: 2.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.28;
+  margin-bottom: 18px;
+}
+
+.intro-description {
+  color: var(--color-slate-gray);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto 36px;
+}
+
+.btn-start {
+  display: inline-block;
+  background-color: var(--color-antique-gold);
+  color: var(--color-deep-navy);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 14px 44px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-standard);
+  text-decoration: none;
+}
+
+.btn-start:hover {
+  background-color: var(--color-antique-gold-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(194, 165, 106, 0.3);
+}
+
+.btn-start:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-antique-gold-focus), 0 0 0 1px var(--color-antique-gold);
+}
+
+/* ==========================================================================
+   Basic Information Form Styles
+   ========================================================================== */
+.basic-info-container {
+  max-width: 520px;
+  margin: 36px auto 0;
+  text-align: left;
+}
+
+.basic-info-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-deep-navy);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.basic-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--color-deep-navy);
+  margin-bottom: 8px;
+}
+
+.text-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--color-deep-navy);
+  background-color: var(--color-soft-white);
+  border: 1.5px solid var(--color-slate-border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-standard);
+  outline: none;
+}
+
+.text-input::placeholder {
+  color: var(--color-slate-gray);
+  opacity: 0.85;
+}
+
+.text-input:focus {
+  background-color: #FFFFFF;
+  border-color: var(--color-antique-gold);
+  box-shadow: 0 0 0 3px var(--color-antique-gold-focus);
+}
+
+.text-input.input-error {
+  border-color: var(--color-error);
+  background-color: #FFFFFF;
+}
+
+.text-input.input-error:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(179, 58, 58, 0.2);
+}
+
+.basic-info-action {
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   Divider & Section Header
+   ========================================================================== */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-slate-border);
+}
+
+.divider-text {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-deep-navy);
+  padding: 0 24px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   2. Questionnaire Section & Cards
+   ========================================================================== */
+.questionnaire-section {
+  width: 100%;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.question-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-slate-border);
+  border-radius: var(--radius-md);
+  padding: 36px 36px 32px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 10px rgba(18, 58, 99, 0.03);
+  position: relative;
+}
+
+.question-card:focus-within {
+  border-color: rgba(194, 165, 106, 0.6);
+  box-shadow: 0 4px 16px rgba(18, 58, 99, 0.06);
+}
+
+.question-card.has-error {
+  border-color: var(--color-error);
+  background-color: #FFFAFA;
+}
+
+.question-header {
+  margin-bottom: 20px;
+}
+
+.question-badge {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-antique-gold);
+  margin-bottom: 10px;
+}
+
+.question-text {
+  display: block;
+  font-size: 1.14rem;
+  font-weight: 600;
+  line-height: 1.48;
+  color: var(--color-deep-navy);
+  cursor: pointer;
+}
+
+/* Textarea & Inputs */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.question-textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 16px 18px;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--color-deep-navy);
+  background-color: var(--color-soft-white);
+  border: 1.5px solid var(--color-slate-border);
+  border-radius: var(--radius-sm);
+  resize: vertical;
+  transition: var(--transition-standard);
+  outline: none;
+}
+
+.question-textarea::placeholder {
+  color: var(--color-slate-gray);
+  opacity: 0.85;
+}
+
+.question-textarea:focus {
+  background-color: #FFFFFF;
+  border-color: var(--color-antique-gold);
+  box-shadow: 0 0 0 3px var(--color-antique-gold-focus);
+}
+
+.question-textarea.input-error {
+  border-color: var(--color-error);
+  background-color: #FFFFFF;
+}
+
+.question-textarea.input-error:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(179, 58, 58, 0.2);
+}
+
+.validation-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-error);
+  font-size: 0.86rem;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.error-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-error);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   3. Submit Section
+   ========================================================================== */
+.submit-section {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.btn-submit {
+  display: inline-block;
+  background-color: var(--color-antique-gold);
+  color: var(--color-deep-navy);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 16px 48px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-standard);
+  box-shadow: 0 4px 14px rgba(18, 58, 99, 0.08);
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: var(--color-antique-gold-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(194, 165, 106, 0.35);
+}
+
+.btn-submit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-antique-gold-focus), 0 0 0 1px var(--color-antique-gold);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================================================
+   4. Thank You Screen
+   ========================================================================== */
+.thank-you-container {
+  width: 100%;
+  max-width: var(--max-width-container);
+  margin: 60px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.thank-you-card {
+  width: 100%;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-slate-border);
+  border-radius: var(--radius-lg);
+  padding: 64px 48px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(18, 58, 99, 0.05);
+}
+
+.accent-mark {
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thank-you-title {
+  font-family: var(--font-heading);
+  color: var(--color-deep-navy);
+  font-size: 2.35rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+}
+
+.thank-you-text {
+  font-size: 1.15rem;
+  color: var(--color-deep-navy);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.thank-you-subtext {
+  font-size: 1.02rem;
+  color: var(--color-slate-gray);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.secondary-action-btn {
+  background-color: transparent;
+  color: var(--color-deep-navy);
+  border: 1.5px solid var(--color-slate-border);
+  padding: 11px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-standard);
+}
+
+.secondary-action-btn:hover {
+  border-color: var(--color-antique-gold);
+  color: var(--color-antique-gold-hover);
+  background-color: rgba(194, 165, 106, 0.05);
+}
+
+/* ==========================================================================
+   5. Responsive Design
+   ========================================================================== */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 24px 16px 60px;
+  }
+
+  .intro-section {
+    padding: 38px 24px;
+    margin-bottom: 36px;
+  }
+
+  .intro-title {
+    font-size: 1.75rem;
+  }
+
+  .intro-description {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .btn-start {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .section-divider {
+    margin-bottom: 30px;
+  }
+
+  .divider-text {
+    font-size: 0.85rem;
+    padding: 0 16px;
+  }
+
+  .questions-container {
+    gap: 24px;
+  }
+
+  .question-card {
+    padding: 24px 20px 22px;
+  }
+
+  .question-text {
+    font-size: 1.05rem;
+  }
+
+  .question-textarea {
+    min-height: 130px;
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+
+  .submit-section {
+    margin-top: 36px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 15px 24px;
+  }
+
+  .thank-you-card {
+    padding: 44px 24px;
+  }
+
+  .thank-you-title {
+    font-size: 1.9rem;
+  }
+}
